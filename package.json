@@ -1,81 +1,38 @@
 {
-  "name": "alog",
-  "version": "0.0.1",
-  "description": "along blog",
-  "main": "index.js",
-  "scripts": {
-    "dev": "npm run dev_server & npm run dev_static",
-    "start": "npm run start_static & npm run start_server",
-    "dev_static": "webpack --watch --config ./static/build/webpack.dev.config.js",
-    "start_static": "webpack --config ./static/build/webpack.prod.config.js",
-    "dev_server": "nodemon --harmony ./server/app",
-    "start_server": "nodemon ./server/app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/YangWenLong123/alog.git"
-  },
-  "author": "along",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/YangWenLong123/alog/issues"
-  },
-  "homepage": "https://github.com/YangWenLong123/alog#readme",
-  "dependencies": {
-    "@babel/polyfill": "^7.0.0",
-    "@vue/cli-plugin-babel": "^4.5.8",
-    "antd": "^3.10.9",
-    "babel-loader": "^8.2.1",
-    "busboy": "^0.2.14",
-    "co": "^4.6.0",
-    "debug": "^2.6.0",
-    "ejs": "^2.5.5",
-    "install": "^0.12.2",
-    "koa": "^2.0.0",
-    "koa-bodyparser": "^3.2.0",
-    "koa-logger": "^3.0.0",
-    "koa-mysql-session": "0.0.2",
-    "koa-router": "^7.0.1",
-    "koa-send": "^3.2.0",
-    "koa-session-minimal": "^3.0.3",
-    "koa-static": "^3.0.0",
-    "koa-views": "^5.2.0",
-    "mysql": "^2.12.0",
-    "npm": "^6.4.1",
-    "prop-types": "^15.6.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "validator": "^6.2.0",
-    "vue": "^2.6.12",
-    "vue-loader": "^15.9.5",
-    "vue-router": "^3.4.9",
-    "whatwg-fetch": "^2.0.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/plugin-proposal-class-properties": "^7.2.1",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.1.6",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.4",
-    "babel-plugin-import": "^1.11.0",
-    "css-loader": "^1.0.1",
-    "install": "^0.12.2",
-    "less": "^3.9.0",
-    "less-loader": "^4.1.0",
-    "mini-css-extract-plugin": "^0.4.5",
-    "npm": "^6.4.1",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "postcss-loader": "^3.0.0",
-    "style-loader": "^0.23.1",
-    "uglifyjs-webpack-plugin": "^2.0.1",
-    "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-merge": "^4.1.4"
-  },
-  "engines": {
-    "node": ">= 7.0.0",
-    "npm": ">= 3.0.0"
-  }
+	"name": "alog",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+        "serve": "vue-cli-service serve",
+        "node": "nodemon ./server/app.js",
+		"dev": "npm run build:dev & nodemon ./server/app.js",
+		"start": "npm run build:prod & nodemon ./server/app.js",
+		"build:dev": "vue-cli-service build --mode development",
+		"build:prod": "vue-cli-service build --mode production",
+		"lint": "vue-cli-service lint",
+		"report": "vue-cli-service build --report"
+	},
+	"dependencies": {
+		"axios": "^0.20.0",
+		"compression-webpack-plugin": "^5.0.1",
+		"core-js": "^3.6.5",
+		"element-ui": "^2.13.2",
+		"vue": "^2.6.11",
+		"vue-router": "^3.2.0",
+		"vue-skeleton-webpack-plugin": "^1.2.2",
+		"vuex": "^3.4.0"
+	},
+	"devDependencies": {
+		"@vue/cli-plugin-babel": "~4.5.0",
+		"@vue/cli-plugin-eslint": "~4.5.0",
+		"@vue/cli-plugin-router": "~4.5.0",
+		"@vue/cli-plugin-vuex": "~4.5.0",
+		"@vue/cli-service": "~4.5.0",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^6.7.2",
+		"eslint-plugin-vue": "^6.2.2",
+		"sass": "^1.26.5",
+		"sass-loader": "^8.0.2",
+		"vue-template-compiler": "^2.6.11"
+	}
 }
